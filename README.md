@@ -102,4 +102,3 @@ info@designsupply-web.com
 ## License
 
 Startify is under [MIT license](https://en.wikipedia.org/wiki/MIT_License). # startify3
-# startify2
