@@ -1,0 +1,25 @@
+{
+  "include": [
+    "src/ts/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "incremental": true, 
+    "target": "es5",
+    "module": "es2015", 
+    "jsx": "react",
+    "sourceMap": true, 
+    "removeComments": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "es2020"
+    ],
+    "experimentalDecorators": true,
+    "esModuleInterop": true ,
+    "moduleResolution": "node"
+  }
+}

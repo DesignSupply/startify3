@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".eslintrc.js",
+    "webpack.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"    
+  ]
+}
