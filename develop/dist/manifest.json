@@ -1,9 +1,9 @@
 {
-  "name": "Startify2",
-  "short_name": "Startify2",
+  "name": "Startify3",
+  "short_name": "Startify3",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "display": "browser",
   "scope": "/",
-  "start_url": "https://github.com/DesignSupply/startify2"
+  "start_url": "https://github.com/DesignSupply/startify3"
 }
