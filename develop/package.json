@@ -4,7 +4,7 @@
   "description": "Development environment for website creation with design and static coding.",
   "main": "main.js",
   "scripts": {
-    "dev": "webpack -w",
+    "dev": "webpack -w && prettier --write dist/**/*.html",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -51,6 +51,7 @@
     "mini-css-extract-plugin": "^1.6.0",
     "postcss": "^8.2.13",
     "postcss-loader": "^5.2.0",
+    "prettier": "^2.5.1",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
     "sass": "^1.38.0",

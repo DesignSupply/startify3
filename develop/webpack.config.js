@@ -14,8 +14,9 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 
 // build settings
 const buildMode = 'development'; // production or development
-const cssInline = false;
-const useTypeScript = true;
+const cssInline = false; // true->inlineCSS false->outputfile
+const useTypeScript = false; // true->TypeScript false->ECMAScript
+const templateEngineType = 'react'; // pug or react
 const directoryPath = {
   root: path.resolve(__dirname, ''),
   dist: path.resolve(__dirname, 'dist'),
@@ -25,9 +26,6 @@ const directoryPath = {
 // build configuration
 let styleLoader = null;
 let entryPointPath = null;
-const pugFiles = globule.find('src/pug/**/*.pug', {
-  ignore: [ 'src/pug/**/_*.pug' ]
-});
 if(cssInline) {
   styleLoader = 'style-loader';
 } else {
@@ -156,17 +154,41 @@ const buildDefault = {
   target: [ 'web', 'es5' ]
 }
 
-// page template output
-pugFiles.forEach((pug) => {
-  const html = pug.split('/').slice(-1)[0].replace('.pug', '.html');
-  buildDefault.plugins.push(
-    new HtmlWebpackPlugin({
-      inject: false,
-      filename: `${directoryPath.dist}/${html}`,
-      template: pug,
-      data: require(`${directoryPath.src}/pug/data/global.js`)
-    })
-  )
-});
+// template engine mode
+if(templateEngineType === 'react') {
+  const templateMode = useTypeScript ? { directory: 'ts/tsx', extension: '.tsx' } : { directory: 'es/jsx', extension: '.jsx' };
+  const reactFiles = globule.find(`src/${templateMode.directory}/template/**/*${templateMode.extension}`, {
+    ignore: [ `src/${templateMode.directory}/template/**/_*${templateMode.extension}` ]
+  });
+  // page template output
+  reactFiles.forEach((react) => {
+    const html = react.split('/').slice(-1)[0].replace(templateMode.extension, '.html');
+    buildDefault.plugins.push(
+      new HtmlWebpackPlugin({
+        inject: false,
+        filename: `${directoryPath.dist}/${html}`,
+        template: react,
+        minify: false
+      })
+    )
+  });
+} else {
+  const pugFiles = globule.find('src/pug/**/*.pug', {
+    ignore: [ 'src/pug/**/_*.pug' ]
+  });
+  // page template output
+  pugFiles.forEach((pug) => {
+    const html = pug.split('/').slice(-1)[0].replace('.pug', '.html');
+    buildDefault.plugins.push(
+      new HtmlWebpackPlugin({
+        inject: false,
+        filename: `${directoryPath.dist}/${html}`,
+        template: pug,
+        minify: false,
+        data: require(`${directoryPath.src}/pug/data/global.js`)
+      })
+    )
+  });
+}
 
 module.exports = buildDefault;
