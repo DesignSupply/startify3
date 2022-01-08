@@ -1,4 +1,4 @@
-const useTypeScript = false; // true->TypeScript false->ECMAScript
+const useTypeScript = true; // true->TypeScript false->ECMAScript
 
 const lintEs = {
   env: {
