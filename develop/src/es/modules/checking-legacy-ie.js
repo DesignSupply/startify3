@@ -18,4 +18,4 @@ export function IsLegacyIE() {
       return false;
     }
   });
-};
+}
