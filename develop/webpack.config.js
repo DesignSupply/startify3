@@ -16,7 +16,7 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 const buildMode = 'development'; // production or development
 const cssInline = false; // true->inlineCSS false->outputfile
 const useTypeScript = false; // true->TypeScript false->ECMAScript
-const templateEngineType = 'react'; // pug or react
+const templateEngineType = 'pug'; // pug or react
 const directoryPath = {
   root: path.resolve(__dirname, ''),
   dist: path.resolve(__dirname, 'dist'),
@@ -58,6 +58,7 @@ const buildDefault = {
           {
             loader: 'babel-loader',
             options: {
+              compact: true,
               presets: [ 
                 '@babel/preset-env',
                 '@babel/preset-react'
@@ -151,11 +152,15 @@ const buildDefault = {
       svgo: {}
     })
   ],
-  target: [ 'web', 'es5' ]
+  target: [ 'web', 'es5' ],
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  }
 }
 
 // template engine mode
-if(templateEngineType === 'react') {
+if(templateEngineType === 'react' && !useTypeScript) { // ECMAScript only
   const templateMode = useTypeScript ? { directory: 'ts/tsx', extension: '.tsx' } : { directory: 'es/jsx', extension: '.jsx' };
   const reactFiles = globule.find(`src/${templateMode.directory}/template/**/*${templateMode.extension}`, {
     ignore: [ `src/${templateMode.directory}/template/**/_*${templateMode.extension}` ]
