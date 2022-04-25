@@ -1,7 +1,8 @@
 {
   "name": "startify3",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Development environment for website creation with design and static coding.",
+  "private": true,
   "main": "main.js",
   "scripts": {
     "dev": "webpack -w && prettier --write dist/**/*.html",
