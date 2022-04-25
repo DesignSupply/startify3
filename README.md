@@ -1,21 +1,20 @@
 # Startify3
 
-Startify3はウェブサイトを作成するために必要なリソースがひととおり揃った静的コーディングの開発環境です。デザインから静的コーディングまでシンプルなウェブページから、JavaScriptのライブラリであるReactを使ったウェブアプリケーションもワンストップで、バンドルツールのwebpackを使って効率よく作成できます。
+Startify3はウェブサイトを作成するために必要なリソースがひととおり揃った静的コーディングの開発環境です。デザインから静的コーディングまでシンプルなウェブページや、JavaScriptライブラリのReactを使ったウェブアプリケーション制作もワンストップで、バンドルツールのwebpackを使って効率よく進めることができます。
 
+また、デザインガイドライン付きのテンプレートと、デザインガイドラインに対応した変数やmixinなどが用意されたSassファイルが揃ったライブラリ（SCSS、SASS記法に対応）の[「Startify-styles」](https://github.com/DesignSupply/startify-styles "Startify-styles")と併用していただくことで、デザイン制作からコーディングまでのスムーズなワークフローを実現できます。
 
 
 ## Features
 
 Startify3で主にできることは以下になります。
 
-* Sketch、Adobe XD、Figmaに対応したデザインガイドライン付きページデザインテンプレート
 * webpackを使ったファイル編集の自動検知
 * Pugを使ったHTMLマークアップと自動整形および外部データ読み込み
 * JSX記法を用いたテンプレートエンジンでのHTMLマークアップ
 * Sass（SCSS記法・SASS記法）のコンパイル
 * StyleLintでのCSSバリデーションチェック
 * ESLintでのTypeScriptおよびJavaScript（ECMAScript）バリデーションチェック
-* デザインテンプレートのフォーマットに合わせたSass変数およびmixinの使用
 * Autoprefixerを使ったベンダープレフィックスの自動付与
 * Babelを使ったJavaScript（ECMAScript）のトランスパイル
 * webpackを使ったTypeScriptのコンパイル（本番環境用・開発環境用）
@@ -28,10 +27,6 @@ Startify3で主にできることは以下になります。
 
 
 ## Requirement
-
-Sketch >= 52.4
-
-Adobe XD >= 27.2.12.4
 
 Node.js >= 12.18.3
 
@@ -77,13 +72,14 @@ $ npm install
 $ npm run dev
 ```
 
+#### 2. 本番環境用ビルドファイルの作成
+```bash
+$ npm run build
+```
 
 
 ## Note
 
-* Sassファイルの変数はSketch、Adobe XD、Figmaの各テンプレートのデザインガイドに合わせています。
-* Sassのファイルおよびディレクトリの構成はFLOCSSに基づいて設計しています。
-* プロジェクト内で使用しているclass名はBEMの命名規則を緩やかに沿った設計になっています。
 * タイトル、ディスクリプション、OGPなどページ固有のmeta要素はPugのソースファイルのデータ変数用スクリプトファイルで指定できます。
 * 初期設定ではJavaScript（ECMAScript）およびTypeScriptのコンパイル出力先が同じになりますので上書きにご注意ください。
 * 初期設定ではSassのSCSS記法およびSASS記法のCSSファイル出力先が同じになりますので上書きにご注意ください。
@@ -104,4 +100,4 @@ info@designsupply-web.com
 
 ## License
 
-Startify is under [MIT license](https://en.wikipedia.org/wiki/MIT_License). # startify3
+Startify is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
