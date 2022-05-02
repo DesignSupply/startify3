@@ -24,18 +24,8 @@ const directoryPath = {
 }
 
 // build configuration
-let styleLoader = null;
-let entryPointPath = null;
-if(cssInline) {
-  styleLoader = 'style-loader';
-} else {
-  styleLoader = { loader: MiniCssExtractPlugin.loader };
-}
-if(useTypeScript) {
-  entryPointPath = `${directoryPath.src}/ts/main.tsx`;
-} else {
-  entryPointPath = `${directoryPath.src}/es/main.jsx`;
-}
+const styleLoader = cssInline ? 'style-loader' : { loader: MiniCssExtractPlugin.loader };
+const entryPointPath = useTypeScript ? `${directoryPath.src}/ts/main.tsx` : `${directoryPath.src}/es/main.jsx`;
 const buildDefault = {
   mode: buildMode,
   devtool: 'source-map',
@@ -63,6 +53,18 @@ const buildDefault = {
                 '@babel/preset-env',
                 '@babel/preset-react'
               ]
+            }
+          }
+        ]
+      },
+      {
+        test: /.css$/,
+        use: [
+          styleLoader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
             }
           }
         ]
