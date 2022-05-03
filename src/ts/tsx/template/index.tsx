@@ -8,9 +8,6 @@ import { CommonExternal } from './components/_CommonExternal';
 import { BodyScript } from './components/_BodyScript';
 import { PageHome } from './components/_PageHome';
 
-interface Props {
-  props: string
-}
 interface pageMetaInterface {
   name: string,
   title: string,
@@ -29,7 +26,7 @@ const pageMeta: pageMetaInterface = {
   url: 'https://example.com/'
 };
 
-export default (props: Props): string => `
+export default (): string => `
   <!DOCTYPE html>
   <html lang="ja" data-theme="light">
     <head>

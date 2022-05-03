@@ -15,8 +15,8 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 // build settings
 const buildMode = 'development'; // production or development
 const cssInline = false; // true->inlineCSS false->outputfile
-const useTypeScript = false; // true->TypeScript false->ECMAScript
-const templateEngineType = 'pug'; // pug or react
+const useTypeScript = true; // true->TypeScript false->ECMAScript
+const templateEngineType = 'react'; // pug or react
 const directoryPath = {
   root: path.resolve(__dirname, ''),
   dist: path.resolve(__dirname, 'dist'),
@@ -162,7 +162,7 @@ const buildDefault = {
 }
 
 // template engine mode
-if(templateEngineType === 'react' && !useTypeScript) { // ECMAScript only
+if(templateEngineType === 'react') {
   const templateMode = useTypeScript ? { directory: 'ts/tsx', extension: '.tsx' } : { directory: 'es/jsx', extension: '.jsx' };
   const reactFiles = globule.find(`src/${templateMode.directory}/template/**/*${templateMode.extension}`, {
     ignore: [ `src/${templateMode.directory}/template/**/_*${templateMode.extension}` ]
