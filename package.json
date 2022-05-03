@@ -1,6 +1,6 @@
 {
   "name": "startify3",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Development environment for website creation with design and static coding.",
   "private": true,
   "main": "main.js",
