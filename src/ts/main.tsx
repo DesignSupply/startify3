@@ -13,14 +13,12 @@ import { FindBrowser } from './modules/checking-browser';
 import ExampleComponent from './tsx/ExampleComponent'
 
 // React
-class App extends React.Component {
-  render() {
-    return (
-      <>
-        <ExampleComponent />
-      </>
-    )
-  }
+const App: React.VFC = (): JSX.Element  => {
+  return (
+    <>
+      <ExampleComponent />
+    </>
+  )
 }
 // ReactDOM.render( <App />, document.getElementById('app') );
 
