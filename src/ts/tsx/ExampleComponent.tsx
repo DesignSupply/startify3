@@ -1,11 +1,9 @@
 import React from 'react';
 
-const ExampleComponent: React.FC = () => {
+export const ExampleComponent: React.VFC = (): JSX.Element => {
   return (
     <>
       <h1>Startify3</h1>
     </>
   )
 }
-
-export default ExampleComponent;
