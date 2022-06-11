@@ -11,7 +11,7 @@ export const PageHomeSection01 = (props) => {
                 <div className='__block-depth-2'>
                   <div className='__block-depth-3'>
                     <div className='__block-depth-4'>
-                      <div className='__block-depth-5'></div> 
+                      <div className='__block-depth-5' id='app'></div> 
                     </div> 
                   </div>
                 </div>

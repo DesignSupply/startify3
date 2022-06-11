@@ -50,8 +50,15 @@ const buildDefault = {
             options: {
               compact: true,
               presets: [ 
-                '@babel/preset-env',
-                '@babel/preset-react'
+                [
+                  "@babel/preset-env",
+                  {
+                    "targets": {
+                      "node": true
+                    }
+                  },
+                ],
+                "@babel/preset-react",
               ]
             }
           }

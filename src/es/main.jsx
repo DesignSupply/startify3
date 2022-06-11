@@ -10,7 +10,7 @@ import { IntersectionObserverToggleClass } from './modules/class-intersection-ob
 import { IsLegacyIE } from './modules/checking-legacy-ie.js';
 import { FindOS } from './modules/checking-os.js';
 import { FindBrowser } from './modules/checking-browser.js';
-import { ExampleComponent } from './jsx/ExampleComponent'
+import { ExampleComponent } from './jsx/app/ExampleComponent.jsx'
 
 // React
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
     </>
   )
 };
-// ReactDOM.render( <App />, document.getElementById('app') );
+ReactDOM.render( <App />, document.getElementById('app') );
 
 // Intersection Observer
 new IntersectionObserverToggleClass({

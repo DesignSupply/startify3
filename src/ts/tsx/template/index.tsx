@@ -34,20 +34,17 @@ export default (): string => `
       ${renderToStaticMarkup(<HeadMeta meta={pageMeta} />)}
     </head>
     <body>
-      <div id="app">
-        <div class="l-base">
-          ${renderToStaticMarkup(<CommonHeader meta={pageMeta} />)}
-          <!-- header end -->
-          ${renderToStaticMarkup(<PageHome meta={pageMeta} />)}
-          <!-- main end -->
-          ${renderToStaticMarkup(<CommonFooter meta={pageMeta} />)}
-          <!-- footer end -->
-        </div>
-        <!-- base end -->
-        ${renderToStaticMarkup(<CommonExternal meta={pageMeta} />)}
-        <!-- external end -->
+      <div class="l-base">
+        ${renderToStaticMarkup(<CommonHeader meta={pageMeta} />)}
+        <!-- header end -->
+        ${renderToStaticMarkup(<PageHome meta={pageMeta} />)}
+        <!-- main end -->
+        ${renderToStaticMarkup(<CommonFooter meta={pageMeta} />)}
+        <!-- footer end -->
       </div>
-      <!-- app end -->
+      <!-- base end -->
+      ${renderToStaticMarkup(<CommonExternal meta={pageMeta} />)}
+      <!-- external end -->
       ${renderToStaticMarkup(<BodyScript meta={pageMeta} />)}
     </body>
   </html>
