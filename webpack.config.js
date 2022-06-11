@@ -51,14 +51,14 @@ const buildDefault = {
               compact: true,
               presets: [ 
                 [
-                  "@babel/preset-env",
+                  '@babel/preset-env',
                   {
-                    "targets": {
-                      "node": true
+                    'targets': {
+                      'node': true
                     }
                   },
                 ],
-                "@babel/preset-react",
+                '@babel/preset-react',
               ]
             }
           }
