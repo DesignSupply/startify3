@@ -7,6 +7,17 @@ block variables
   - var meta = siteInfo.pageMeta[page]
   - var bodyClass = 'page-home-body'
   - var isFrontPage = true
+  - 
+    var jsonLd = [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://example.com/",
+          "name": "HOME"
+        }
+      }
+    ]
 
 block append pageMeta
     // ページ固有設定メタデータ 

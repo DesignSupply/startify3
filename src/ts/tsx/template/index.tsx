@@ -17,6 +17,15 @@ interface pageMetaInterface {
   url: string
 }
 
+interface jsonLdInterface {
+  '@type': string,
+  position: number,
+  item: {
+    '@id': string,
+    name: string
+  }
+}
+
 const pageMeta: pageMetaInterface = {
   name: 'home',
   title: 'トップページ',
@@ -26,12 +35,30 @@ const pageMeta: pageMetaInterface = {
   url: 'https://example.com/'
 };
 
+const jsonLd: jsonLdInterface[] = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id":"https://example.com/",
+      "name":"HOME"
+    }
+  }
+];
+
 export default (): string => `
   <!DOCTYPE html>
   <html lang="ja" data-theme="light">
     <head>
       ${renderToStaticMarkup(<Head meta={pageMeta} />)}
       ${renderToStaticMarkup(<HeadMeta meta={pageMeta} />)}
+      <script type="application/ld+json">
+        {
+          "@context":"http://schema.org",
+          "@type":"BreadcrumbList",
+          "itemListElement": ${JSON.stringify(jsonLd)}
+        }
+      </script>
     </head>
     <body>
       <div class="l-base">

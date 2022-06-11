@@ -36,6 +36,13 @@ html(lang="ja" data-theme="light")
 
     block pageMeta
 
+    script(type="application/ld+json").
+      {
+        "@context":"http://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement": !{JSON.stringify(jsonLd)}
+      }
+
   body(class=bodyClass)
     noscript ※当ウェブサイトを快適に閲覧して頂くためjavascriptを有効にしてください
     div#app

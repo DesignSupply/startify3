@@ -17,12 +17,30 @@ const pageMeta = {
   url: 'https://example.com/'
 };
 
+const jsonLd = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id":"https://example.com/",
+      "name":"HOME"
+    }
+  }
+];
+
 export default () => `
   <!DOCTYPE html>
   <html lang="ja" data-theme="light">
     <head>
       ${renderToStaticMarkup(<Head meta={pageMeta} />)}
       ${renderToStaticMarkup(<HeadMeta meta={pageMeta} />)}
+      <script type="application/ld+json">
+        {
+          "@context":"http://schema.org",
+          "@type":"BreadcrumbList",
+          "itemListElement": ${JSON.stringify(jsonLd)}
+        }
+      </script>
     </head>
     <body>
       <div class="l-base">
