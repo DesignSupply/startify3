@@ -11,6 +11,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
+const TailwindCSS = require('tailwindcss');
 
 // build settings
 const buildMode = 'development'; // production or development
@@ -73,6 +74,16 @@ const buildDefault = {
             options: {
               url: false,
             }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  TailwindCSS
+                ]
+              }
+            }
           }
         ]
       },
@@ -93,6 +104,7 @@ const buildDefault = {
             options: {
               postcssOptions: {
                 plugins: [
+                  TailwindCSS,
                   [ 'autoprefixer', { grid: true } ],
                   [ 'cssnano', { preset: 'default' } ]
                 ]
