@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type PageMeta = {
+interface pageMetaInterface {
   meta: {
     name: string,
     title: string,
@@ -11,7 +11,7 @@ export type PageMeta = {
   }
 }
 
-export const HeadMeta: React.VFC<PageMeta> = (props) => {
+export const HeadMeta: React.VFC<pageMetaInterface> = (props) => {
   return (
     <>
       <meta property="og:title" content={props.meta.title} />

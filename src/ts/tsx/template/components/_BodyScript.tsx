@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type PageMeta = {
+interface pageMetaInterface {
   meta: {
     name: string,
     title: string,
@@ -11,7 +11,7 @@ export type PageMeta = {
   }
 }
 
-export const BodyScript: React.VFC<PageMeta> = (props) => {
+export const BodyScript: React.VFC<pageMetaInterface> = (props) => {
   return (
     <>
       <script src="assets/js/main.min.js"></script>

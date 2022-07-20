@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageHomeSection01 } from './_PageHomeSection01';
 
-export type PageMeta = {
+interface pageMetaInterface {
   meta: {
     name: string,
     title: string,
@@ -12,7 +12,7 @@ export type PageMeta = {
   }
 }
 
-export const PageHome: React.VFC<PageMeta> = (props) => {
+export const PageHome: React.VFC<pageMetaInterface> = (props) => {
   const currentPage: string = props.meta.name;
   return (
     <>

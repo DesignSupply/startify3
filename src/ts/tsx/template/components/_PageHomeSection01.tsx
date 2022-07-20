@@ -1,10 +1,10 @@
 import React from 'react';
 
-export type PageSection = {
+interface pageSectionInterface {
   pageName: string
 }
 
-export const PageHomeSection01: React.VFC<PageSection> = (props) => {
+export const PageHomeSection01: React.VFC<pageSectionInterface> = (props) => {
   return (
     <>
       <article className='p-section-01'>

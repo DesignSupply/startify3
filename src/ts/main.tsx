@@ -13,7 +13,7 @@ import { FindBrowser } from './modules/checking-browser';
 import { ExampleComponent } from './tsx/app/ExampleComponent'
 
 // React
-const App: React.VFC = (): JSX.Element  => {
+const App: React.VFC = () => {
   return (
     <>
       <ExampleComponent />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type PageMeta = {
+interface pageMetaInterface {
   meta: {
     name: string,
     title: string,
@@ -11,7 +11,7 @@ export type PageMeta = {
   }
 }
 
-export const CommonFooter: React.VFC<PageMeta> = (props) => {
+export const CommonFooter: React.VFC<pageMetaInterface> = (props) => {
   return (
     <>
       <footer className='l-footer'>
