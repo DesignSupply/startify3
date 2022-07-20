@@ -65,7 +65,7 @@ const buildDefault = {
         ]
       },
       {
-        test: /.css$/,
+        test: /\.css$/,
         use: [
           styleLoader,
           {
