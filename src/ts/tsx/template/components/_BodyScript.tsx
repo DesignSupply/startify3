@@ -14,7 +14,7 @@ interface pageMetaInterface {
 export const BodyScript: React.VFC<pageMetaInterface> = (props) => {
   return (
     <>
-      <script src="assets/js/main.min.js"></script>
+      <script src="assets/scripts/main.min.js"></script>
     </>
   )
 }

@@ -26,14 +26,14 @@ const directoryPath = {
 
 // build configuration
 const styleLoader = cssInline ? 'style-loader' : { loader: MiniCssExtractPlugin.loader };
-const entryPointPath = useTypeScript ? `${directoryPath.src}/ts/main.tsx` : `${directoryPath.src}/es/main.jsx`;
+const entryPointPath = useTypeScript ? `${directoryPath.src}/ts/main.tsx` : `${directoryPath.src}/js/main.jsx`;
 const buildDefault = {
   mode: buildMode,
   devtool: 'source-map',
   entry: entryPointPath,
   output: {
     path: `${directoryPath.dist}/assets`,
-    filename: 'js/main.min.js'
+    filename: 'scripts/main.min.js'
   },
   module: {
     rules: [
@@ -139,7 +139,7 @@ const buildDefault = {
       extensions: [ '.ts', '.js', '.tsx', '.jsx' ],
       exclude: 'node_modules'
     }),
-    new MiniCssExtractPlugin({ filename: 'css/main.min.css' }),
+    new MiniCssExtractPlugin({ filename: 'stylesheets/main.min.css' }),
     new StylelintPlugin({ configFile: `${directoryPath.root}/.stylelintrc.json` }),
     new BrowserSyncPlugin({
       host: 'localhost',
@@ -149,8 +149,8 @@ const buildDefault = {
     new CopyPlugin({
       patterns: [
         { 
-          from: `${directoryPath.src}/images`, 
-          to: `${directoryPath.dist}/assets/img/_min/[name]_min[ext]`
+          from: `${directoryPath.src}/img`, 
+          to: `${directoryPath.dist}/assets/images/_min/[name]_min[ext]`
         }
       ]
     }),
@@ -182,7 +182,7 @@ const buildDefault = {
 
 // template engine mode
 if(templateEngineType === 'react') {
-  const templateMode = useTypeScript ? { directory: 'ts/tsx', extension: '.tsx' } : { directory: 'es/jsx', extension: '.jsx' };
+  const templateMode = useTypeScript ? { directory: 'ts/tsx', extension: '.tsx' } : { directory: 'js/jsx', extension: '.jsx' };
   const reactFiles = globule.find(`src/${templateMode.directory}/template/**/*${templateMode.extension}`, {
     ignore: [ `src/${templateMode.directory}/template/**/_*${templateMode.extension}` ]
   });

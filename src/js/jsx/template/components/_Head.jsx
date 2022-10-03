@@ -32,7 +32,7 @@ export const Head = (props) => {
       <link rel="apple-touch-icon" href="assets/img/icon/******.png" />
       <link rel="icon" sizes="192x192" href="assets/img/icon/******-192x192.png" />
       <link rel="icon" href="favicon.ico" />
-      <link rel="stylesheet" href="assets/css/main.min.css" />
+      <link rel="stylesheet" href="assets/stylesheets/main.min.css" />
     </>
   );
 }
