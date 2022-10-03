@@ -15,13 +15,14 @@ Startify3で主にできることは以下になります。
 * ページテンプレートに対応したJSON-LD構造化データの設定（Pug・JSX・TSX）
 * Sass（SCSS記法・SASS記法）のコンパイル
 * StyleLintでのCSSバリデーションチェック
-* ESLintでのTypeScriptおよびJavaScript（ECMAScript）バリデーションチェック
+* ESLintでのTypeScriptおよびJavaScriptバリデーションチェック
 * Autoprefixerを使ったベンダープレフィックスの自動付与
-* Babelを使ったJavaScript（ECMAScript）のトランスパイル
+* Babelを使ったJavaScriptのトランスパイル
 * webpackを使ったTypeScriptのコンパイル（本番環境用・開発環境用）
-* Reactライブラリの使用（ECMAScript・TypeScript）
+* Reactライブラリの使用（JavaScript・TypeScript）
+* TailwindCSSライブラリの使用（JSX・TSX）
 * ソースコードのマッピングファイルの生成
-* CSS、JavaScriptファイルの自動minify化
+* HTML、CSS、JavaScriptファイルの自動minify化
 * 開発用ローカルサーバーの起動とBrowsersyncでの自動リロード
 * 各種画像ファイル（jpg、png、gif、svg）の圧縮
 
@@ -29,11 +30,11 @@ Startify3で主にできることは以下になります。
 
 ## Requirement
 
-Node.js >= 12.18.3
+Node.js >= 16.x.x
 
-npm >= 6.14.6
+npm >= 8.x.x
 
-npx >= 6.14.6
+npx >= 8.x.x
 
 
 
@@ -82,7 +83,7 @@ $ npm run build
 ## Note
 
 * タイトル、ディスクリプション、OGPなどページ固有のmeta要素はPugのソースファイルのデータ変数用スクリプトファイルで指定できます。
-* 初期設定ではJavaScript（ECMAScript）およびTypeScriptのコンパイル出力先が同じになりますので上書きにご注意ください。
+* 初期設定ではJavaScriptおよびTypeScriptのコンパイル出力先が同じになりますので上書きにご注意ください。
 * 初期設定ではSassのSCSS記法およびSASS記法のCSSファイル出力先が同じになりますので上書きにご注意ください。
 * 初期設定では〜IE11などのレガシーブラウザではページ表示時にアラートで警告が出るようになっています。
 * 初期設定では開発用ローカルサーバーのポート番号は2000となっています。
