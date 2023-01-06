@@ -35,7 +35,8 @@ const buildDefault = {
   },
   output: {
     path: `${directoryPath.dist}/assets`,
-    filename: 'scripts/[name].min.js'
+    filename: 'scripts/[name].min.js',
+    assetModuleFilename: 'images/_min/[name][ext][query]'
   },
   module: {
     rules: [
@@ -74,7 +75,7 @@ const buildDefault = {
           {
             loader: 'css-loader',
             options: {
-              url: false,
+              url: true,
             }
           },
           {
@@ -96,7 +97,7 @@ const buildDefault = {
           {
             loader: 'css-loader',
             options: {
-              url: false,
+              url: true,
               sourceMap: true,
               importLoaders: 2
             }
@@ -130,7 +131,16 @@ const buildDefault = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(gif|png|jpg|jpeg)$/,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 50 * 1024,
+          },
+        },
+      },
     ]
   },
   resolve: {
