@@ -189,6 +189,12 @@ const buildDefault = {
   performance: {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
+  },
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
   }
 }
 
