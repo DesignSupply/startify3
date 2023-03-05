@@ -5,8 +5,9 @@
   "private": true,
   "main": "main.js",
   "scripts": {
-    "dev": "webpack -w && prettier --write dist/**/*.html",
-    "build": "webpack --mode production"
+    "dev": "webpack -w",
+    "build": "webpack --mode production",
+    "format": "prettier --write 'dist/**/*.html'"
   },
   "repository": {
     "type": "git",
