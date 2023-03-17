@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface pageMetaInterface {
+interface propsInterface {
   meta: {
     name: string,
     title: string,
@@ -11,7 +11,7 @@ interface pageMetaInterface {
   }
 }
 
-export const Head: React.VFC<pageMetaInterface> = (props) => {
+export const Head: React.VFC<propsInterface> = (props) => {
   return (
     <>
       <meta charSet="utf-8" />
@@ -29,7 +29,7 @@ export const Head: React.VFC<pageMetaInterface> = (props) => {
       <meta property="fb:admins" content="" />
       <meta property="fb:app_id" content="" />
       <meta property="og:locale" content="ja_JP" />
-      <meta property="og:site_name" content={props.meta.title} />
+      <meta property="og:site_name" content="" />
       <meta name="msapplication-tap-highlight" content="no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="application-name" content="" />

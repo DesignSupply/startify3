@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface pageMetaInterface {
+interface propsInterface {
   meta: {
     name: string,
     title: string,
@@ -11,7 +11,7 @@ interface pageMetaInterface {
   }
 }
 
-export const CommonFooter: React.VFC<pageMetaInterface> = (props) => {
+export const CommonFooter: React.VFC<propsInterface> = (props) => {
   return (
     <>
       <footer className='l-footer'>

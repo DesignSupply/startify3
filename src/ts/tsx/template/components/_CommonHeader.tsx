@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface pageMetaInterface {
+interface propsInterface {
   meta: {
     name: string,
     title: string,
@@ -11,7 +11,7 @@ interface pageMetaInterface {
   }
 }
 
-export const CommonHeader: React.VFC<pageMetaInterface> = (props) => {
+export const CommonHeader: React.VFC<propsInterface> = (props) => {
   return (
     <>
       <header className='l-header'>

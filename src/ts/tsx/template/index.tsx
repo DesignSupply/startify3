@@ -37,11 +37,11 @@ const pageMeta: pageMetaInterface = {
 
 const jsonLd: jsonLdInterface[] = [
   {
-    "@type": "ListItem",
-    "position": 1,
-    "item": {
-      "@id":"https://example.com/",
-      "name":"HOME"
+    '@type': 'ListItem',
+    position: 1,
+    item: {
+      '@id': 'https://example.com/',
+      name: 'HOME'
     }
   }
 ];

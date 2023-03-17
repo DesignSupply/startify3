@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface pageMetaInterface {
+interface propsInterface {
   meta: {
     name: string,
     title: string,
@@ -11,7 +11,7 @@ interface pageMetaInterface {
   }
 }
 
-export const CommonExternal: React.VFC<pageMetaInterface> = (props) => {
+export const CommonExternal: React.VFC<propsInterface> = (props) => {
   return (
     <>
       <div className='l-external'></div>
