@@ -162,7 +162,8 @@ const buildDefault = {
       patterns: [
         { 
           from: `${directoryPath.src}/img`, 
-          to: `${directoryPath.dist}/assets/images/_min/[name]_min[ext]`
+          to: `${directoryPath.dist}/assets/images/_min/[name]_min[ext]`,
+          noErrorOnMissing: true
         }
       ]
     }),
